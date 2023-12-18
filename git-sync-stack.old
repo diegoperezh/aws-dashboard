@@ -1,0 +1,12 @@
+template-file-path: ./monitoring-alarms.yml
+
+parameters: 
+    SNSEmailAddress: diegoperezh.sso@gmail.com
+    OutpostsID: 0123acf0919c259c2
+    VirtualInterfaceGroupId: lgw-vif-grp-0a23ccd11d11456b
+    VirtualInterface1Id: lgw-vif-0123418118214ad32
+    VirtualInterface2Id: lgw-vif-0123456010768f3b6
+
+tags:
+    cost-center: 'abc678'
+    org: 'AWS'

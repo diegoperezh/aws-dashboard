@@ -1,0 +1,7 @@
+[
+  { "ParameterKey": "SNSEmailAddress",              "ParameterValue": "diegoperezh@gmail.com" },
+  { "ParameterKey": "OutpostsID",                   "ParameterValue": "05d2acf0919c25444" },
+  { "ParameterKey": "VirtualInterfaceGroupId",      "ParameterValue": "lgw-vif-grp-0b42fccd11d114444" },
+  { "ParameterKey": "VirtualInterface1Id",          "ParameterValue": "lgw-vif-078ed418118214444" },
+  { "ParameterKey": "VirtualInterface2Id",          "ParameterValue": "lgw-vif-027c6010768f3b444" }
+]

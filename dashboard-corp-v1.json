@@ -1,0 +1,256 @@
+{
+    "start": "-PT24H",
+    "widgets": [
+        {
+            "height": 5,
+            "width": 4,
+            "y": 0,
+            "x": 0,
+            "type": "metric",
+            "properties": {
+                "view": "gauge",
+                "title": "Outpost Connectivity to AWS Canada",
+                "region": "ca-central-1",
+                "metrics": [
+                    [ "AWS/Outposts", "ConnectedStatus", "OutpostId", "op-05d2acf0919c259c2", { "region": "ca-central-1" } ]
+                ],
+                "yAxis": {
+                    "left": {
+                        "min": 0,
+                        "max": 1
+                    }
+                },
+                "period": 300,
+                "annotations": {
+                    "horizontal": [
+                        {
+                            "color": "#b2df8d",
+                            "label": "Connected",
+                            "value": 0.999,
+                            "fill": "above"
+                        },
+                        {
+                            "color": "#d62728",
+                            "label": "Disconnected",
+                            "value": 0.999,
+                            "fill": "below"
+                        }
+                    ]
+                },
+                "setPeriodToTimeRange": true,
+                "stacked": false
+            }
+        },
+        {
+            "height": 6,
+            "width": 4,
+            "y": 5,
+            "x": 0,
+            "type": "metric",
+            "properties": {
+                "metrics": [
+                    [ { "label": "S3OutpostAvailability (%)", "expression": "100*(outpostfreebytes/outposttotalbytes)", "region": "ca-central-1" } ],
+                    [ "AWS/S3Outposts", "OutpostFreeBytes", "OutpostId", "op-05d2acf0919c259c2", { "label": "outpostfreebytes", "visible": false, "id": "outpostfreebytes", "region": "ca-central-1" } ],
+                    [ ".", "OutpostTotalBytes", ".", ".", { "label": "outposttotalbytes", "visible": false, "id": "outposttotalbytes", "region": "ca-central-1" } ]
+                ],
+                "view": "singleValue",
+                "title": "S3 Outposts Availability (%)",
+                "region": "ca-central-1",
+                "stacked": true,
+                "yAxis": {
+                    "left": {
+                        "label": "Percent",
+                        "showUnits": false
+                    }
+                },
+                "period": 300,
+                "stat": "Maximum"
+            }
+        },
+        {
+            "height": 6,
+            "width": 8,
+            "y": 5,
+            "x": 4,
+            "type": "metric",
+            "properties": {
+                "metrics": [
+                    [ "AWS/S3Outposts", "OutpostFreeBytes", "OutpostId", "op-05d2acf0919c259c2", { "region": "ca-central-1", "color": "#d62728", "id": "m1", "label": "OutpostFreeBytes" } ],
+                    [ ".", "OutpostTotalBytes", ".", ".", { "region": "ca-central-1", "color": "#2ca02c", "id": "m2" } ]
+                ],
+                "view": "timeSeries",
+                "title": "S3 Outposts Availability (Bytes)",
+                "region": "ca-central-1",
+                "stacked": false,
+                "yAxis": {
+                    "left": {
+                        "min": 0
+                    }
+                },
+                "period": 300,
+                "stat": "Maximum",
+                "setPeriodToTimeRange": true
+            }
+        },
+        {
+            "height": 6,
+            "width": 4,
+            "y": 5,
+            "x": 12,
+            "type": "metric",
+            "properties": {
+                "metrics": [
+                    [ "AWS/Outposts", "EBSVolumeTypeCapacityAvailability", "OutpostId", "op-05d2acf0919c259c2", "VolumeType", "gp2", { "region": "ca-central-1" } ]
+                ],
+                "view": "singleValue",
+                "title": "EBS Availability (%)",
+                "region": "ca-central-1",
+                "stacked": true,
+                "period": 300,
+                "stat": "Maximum"
+            }
+        },
+        {
+            "height": 6,
+            "width": 8,
+            "y": 5,
+            "x": 16,
+            "type": "metric",
+            "properties": {
+                "metrics": [
+                    [ "AWS/Outposts", "EBSVolumeTypeCapacityAvailabilityGB", "OutpostId", "op-05d2acf0919c259c2", "VolumeType", "gp2", { "region": "ca-central-1", "color": "#d62728" } ],
+                    [ ".", "EBSVolumeTypeCapacityUtilizationGB", ".", ".", ".", ".", { "region": "ca-central-1", "color": "#2ca02c" } ]
+                ],
+                "view": "timeSeries",
+                "title": "EBS Availability (GB)",
+                "region": "ca-central-1",
+                "stacked": false,
+                "period": 300,
+                "stat": "Maximum",
+                "yAxis": {
+                    "left": {
+                        "min": 0
+                    }
+                }
+            }
+        },
+        {
+            "height": 7,
+            "width": 4,
+            "y": 11,
+            "x": 0,
+            "type": "metric",
+            "properties": {
+                "metrics": [
+                    [ "AWS/Outposts", "InstanceTypeCapacityAvailability", "OutpostId", "op-05d2acf0919c259c2", "InstanceType", "m5.large", { "region": "ca-central-1" } ],
+                    [ ".", "UsedInstanceType_Count", ".", ".", ".", ".", { "region": "ca-central-1" } ],
+                    [ ".", "AvailableInstanceType_Count", ".", ".", ".", ".", { "region": "ca-central-1" } ]
+                ],
+                "view": "singleValue",
+                "title": "m5.large",
+                "region": "ca-central-1",
+                "stacked": true,
+                "period": 300,
+                "stat": "Maximum"
+            }
+        },
+        {
+            "height": 7,
+            "width": 4,
+            "y": 11,
+            "x": 4,
+            "type": "metric",
+            "properties": {
+                "metrics": [
+                    [ "AWS/Outposts", "InstanceTypeCapacityAvailability", "OutpostId", "op-05d2acf0919c259c2", "InstanceType", "m5.xlarge", { "region": "ca-central-1" } ],
+                    [ ".", "UsedInstanceType_Count", ".", ".", ".", ".", { "region": "ca-central-1" } ],
+                    [ ".", "AvailableInstanceType_Count", ".", ".", ".", ".", { "region": "ca-central-1" } ]
+                ],
+                "view": "singleValue",
+                "title": "m5.xlarge",
+                "region": "ca-central-1",
+                "stacked": true,
+                "period": 300,
+                "stat": "Maximum"
+            }
+        },
+        {
+            "height": 7,
+            "width": 4,
+            "y": 11,
+            "x": 8,
+            "type": "metric",
+            "properties": {
+                "metrics": [
+                    [ "AWS/Outposts", "InstanceTypeCapacityAvailability", "OutpostId", "op-05d2acf0919c259c2", "InstanceType", "m5.2xlarge", { "region": "ca-central-1" } ],
+                    [ ".", "UsedInstanceType_Count", ".", ".", ".", ".", { "region": "ca-central-1" } ],
+                    [ ".", "AvailableInstanceType_Count", ".", ".", ".", ".", { "region": "ca-central-1" } ]
+                ],
+                "view": "singleValue",
+                "title": "m5.2xlarge",
+                "region": "ca-central-1",
+                "stacked": true,
+                "period": 300,
+                "stat": "Maximum"
+            }
+        },
+        {
+            "height": 7,
+            "width": 4,
+            "y": 11,
+            "x": 12,
+            "type": "metric",
+            "properties": {
+                "metrics": [
+                    [ "AWS/Outposts", "InstanceTypeCapacityAvailability", "OutpostId", "op-05d2acf0919c259c2", "InstanceType", "m5.4xlarge", { "region": "ca-central-1" } ],
+                    [ ".", "UsedInstanceType_Count", ".", ".", ".", ".", { "region": "ca-central-1" } ],
+                    [ ".", "AvailableInstanceType_Count", ".", ".", ".", ".", { "region": "ca-central-1" } ]
+                ],
+                "view": "singleValue",
+                "title": "m5.4xlarge",
+                "region": "ca-central-1",
+                "stacked": true,
+                "period": 300,
+                "stat": "Maximum"
+            }
+        },
+        {
+            "height": 5,
+            "width": 10,
+            "y": 0,
+            "x": 14,
+            "type": "metric",
+            "properties": {
+                "metrics": [
+                    [ "AWS/Outposts", "IfTrafficOut", "VirtualInterfaceId", "lgw-vif-027c6010768f3be49", "OutpostsId", "05d2acf0919c259c2", "VirtualInterfaceGroupId", "lgw-vif-grp-0b42fccd11d11456b" ],
+                    [ ".", "IfTrafficIn", ".", ".", ".", ".", ".", "." ]
+                ],
+                "view": "timeSeries",
+                "title": "Local Gateway VIF-2 network traffic",
+                "region": "ca-central-1",
+                "stacked": true,
+                "period": 300,
+                "stat": "Maximum"
+            }
+        },
+        {
+            "height": 5,
+            "width": 10,
+            "y": 0,
+            "x": 4,
+            "type": "metric",
+            "properties": {
+                "metrics": [
+                    [ "AWS/Outposts", "IfTrafficIn", "VirtualInterfaceId", "lgw-vif-078ed418118214ad3", "OutpostsId", "05d2acf0919c259c2", "VirtualInterfaceGroupId", "lgw-vif-grp-0b42fccd11d11456b" ],
+                    [ ".", "IfTrafficOut", ".", ".", ".", ".", ".", "." ]
+                ],
+                "view": "timeSeries",
+                "title": "Local Gateway VIF-1 network traffic",
+                "region": "ca-central-1",
+                "stacked": true,
+                "period": 300,
+                "stat": "Maximum"
+            }
+        }
+    ]
+}
