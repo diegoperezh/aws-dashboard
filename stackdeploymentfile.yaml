@@ -2,11 +2,11 @@ template-file-path: ./template.yml
 
 parameters: 
     SNSEmailAddress: diegoperezh.sso@gmail.com
-    OutpostsID: 0123acf0919c25aa123
-    VirtualInterfaceGroupId: lgw-vif-grp-0a23ccd11d11aa123
-    VirtualInterface1Id: lgw-vif-012341811821aa123
-    VirtualInterface2Id: lgw-vif-012345601076aa123
+    OutpostsID: 0123acf0919c25aa12345
+    VirtualInterfaceGroupId: lgw-vif-grp-0a23ccd11d11aa12345
+    VirtualInterface1Id: lgw-vif-012341811821aa12345
+    VirtualInterface2Id: lgw-vif-012345601076aa12345
 
 tags:
     cost-center: 'abc678'
-    owner: 'diegoph'
+    owner: 'diegoph1'
